@@ -1,6 +1,6 @@
 const queryInputElem = document.getElementById('query');
 const frigginForm = document.getElementById('vestigial');
-
+var img;
 function myFunction() {
   var x = document.getElementById("vestigial");
   var text = "";
@@ -35,7 +35,8 @@ queryInputElem.addEventListener('keyup', async function(ev) {
 
     fetch(`https://movie-database-alternative.p.rapidapi.com/?s=${queryInputElem.value}&r=json&page=1`, options)
 	    .then(response => response.json())
-	    .then(response => console.log(response))
+	    .then(response => document.write(img src = "response.Search[0].imdbID"))
+      // .then(response => console.log(response.Search[0].Poster))
 	    .catch(err => console.error(err));
   
   }
