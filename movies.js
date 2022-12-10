@@ -5,7 +5,12 @@ const movie = document.getElementById("movie_1");
 for (var i = 0; i < movies.length; i++) {
     const imgs = document.createElement("img");
     imgs.setAttribute('src', movies[i].Poster);
+    imgs.setAttribute('onclick', "description()");
     movie.append(imgs);
+}
+
+function description() {
+    window.location.href = "Description.html";
 }
 
 function secondApiInfo(secondData) {
