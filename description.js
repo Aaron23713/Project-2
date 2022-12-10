@@ -12,7 +12,12 @@ const options = {
 
 fetch(`https://mdblist.p.rapidapi.com/?i=${imdb_ip}`, options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => {console.log(response); get_data(response)})
 	.catch(err => console.error(err));
 
-const imgs = document.createElement("img");
+function get_data(data) {
+	const imgs = document.createElement("img");
+	imgs.setAttribute('src', data.poster);
+	movie_img.append(imgs);
+}
+

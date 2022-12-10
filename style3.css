@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+
+img {
+    /* top: 0%;
+    left: 50%; */
+    width: 30%;
+    height: 30%;
+    padding: 50px;
+    position: center;
+
+}
