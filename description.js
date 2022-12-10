@@ -1,13 +1,18 @@
-const movies = JSON.parse(window.localStorage.getItem('movies'));
+const imdb_ip = window.localStorage.getItem('value1');
+const movie_img = document.getElementById("movie_1");
+
+
 const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '4ac9c5d418mshab658417ac8c14ap1a82a0jsn87844a4ee0ca',
-        'X-RapidAPI-Host': 'movie-details1.p.rapidapi.com'
-    }
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '4ac9c5d418mshab658417ac8c14ap1a82a0jsn87844a4ee0ca',
+		'X-RapidAPI-Host': 'mdblist.p.rapidapi.com'
+	}
 };
 
-fetch(`https://movie-details1.p.rapidapi.com/imdb_api/movie?id=${movies[i].imdbID}`, options)
-.then(response => response.json())
-.then(response => {console.log(response); get_data2(response) })
-.catch(err => console.error(err));
+fetch(`https://mdblist.p.rapidapi.com/?i=${imdb_ip}`, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
+const imgs = document.createElement("img");
