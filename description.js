@@ -1,7 +1,6 @@
 const imdb_ip = window.localStorage.getItem('value1');
 const movie_img = document.getElementById("movie_1");
-
-
+const box = document.getElementById("moviebox");
 const options = {
 	method: 'GET',
 	headers: {
@@ -17,7 +16,10 @@ fetch(`https://mdblist.p.rapidapi.com/?i=${imdb_ip}`, options)
 
 function get_data(data) {
 	const imgs = document.createElement("img");
+	const para = document.createElement("p");
 	imgs.setAttribute('src', data.poster);
 	movie_img.append(imgs);
+    box.append(data.description);
+
 }
 
