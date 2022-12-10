@@ -28,7 +28,7 @@ queryInputElem.addEventListener('keyup', async function(ev) {
 
     const movie = await fetch(`https://movie-database-alternative.p.rapidapi.com/?s=${queryInputElem.value}&r=json&page=1`, options)
 	    .then(response => response.json())
-      .then(response => { console.log(response.Search); get_data(response.Search) })
+      .then(response => { console.log(response); get_data(response.Search) })
 	    .catch(err => console.error(err));
     
     window.location.href = "Movies.html";
