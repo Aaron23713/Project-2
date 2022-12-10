@@ -1,5 +1,6 @@
 const queryInputElem = document.getElementById('query');
 const frigginForm = document.getElementById('vestigial');
+
 var img;
 
 const options = {
@@ -22,14 +23,15 @@ const results = document.getElementById('results');
 queryInputElem.addEventListener('keyup', async function(ev) {
   ev.preventDefault()
   if (ev.key == 'Enter') {
+
     console.log('pressed enter')
 
     const movie = await fetch(`https://movie-database-alternative.p.rapidapi.com/?s=${queryInputElem.value}&r=json&page=1`, options)
 	    .then(response => response.json())
       .then(response => { console.log(response.Search); get_data(response.Search) })
-      // .then(response => get_data(response.Search))
 	    .catch(err => console.error(err));
     
+    window.location.href = "Movies.html";
   }
 });
 
@@ -45,4 +47,5 @@ function myFunction() {
 
 function get_data(data) {
   const movies = data;
+  window.localStorage.setItem('movies', JSON.stringify(movies));
 }

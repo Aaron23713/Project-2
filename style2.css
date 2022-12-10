@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    margin: -10px;
+    background-color: black;
+  }
+
+.bg-body {
+    background-image: url("movies.jpeg");
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.parent {
+  flex-direction: row;
+  display: contents;
+  margin-top: 20px;
+  margin-right: 13px;  
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  object-fit: cover;
+  position: absolute;
+  box-sizing: 50%;
+}
+
+img {
+  /* top: 0%;
+  left: 50%; */
+  width: 350px;
+  height: 450px;
+  margin-top: 50px;
+  margin-left: 50px;
+  padding: 50px;
+  border: solid white;
+ 
+}
